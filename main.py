@@ -1,4 +1,4 @@
-from grades import average
+from grades import average, grade_name, is_passed
 
 students = {
     "Иванов": [5, 4, 5],
@@ -7,4 +7,7 @@ students = {
 }
 
 for name, marks in students.items():
-    print(name, average(marks))
+    avg = round(average(marks), 2)
+    status = "аттестован" if is_passed(marks) else "не аттестован"
+    print(f"{name}: средний балл {avg}, {status}")
+    print("  оценки:", ", ".join(grade_name(m) for m in marks))
