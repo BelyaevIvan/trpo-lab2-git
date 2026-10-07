@@ -1,10 +1,7 @@
+from data import students
 from grades import average, grade_name, is_passed
 
-students = {
-    "Иванов": [5, 4, 5],
-    "Петров": [3, 4, 4],
-    "Сидоров": [4, 2, 3],
-}
+print(f"Студентов в группе: {len(students)}")
 
 for name, marks in students.items():
     avg = round(average(marks), 2)
